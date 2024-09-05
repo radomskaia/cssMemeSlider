@@ -2,38 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MemeSlider Radomskaia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <div class="slider-block">
+<div class="container flex flex-column flex-center">
+    <div class="slider-block flex flex-column flex-center">
         <div class="slider-box">
-            <div class="slider">
-                <img src="assets/img" class="slider-item" alt="meme">
-                <img src="assets/img" class="slider-item" alt="meme">
-                <img src="assets/img" class="slider-item" alt="meme">
-                <img src="assets/img" class="slider-item" alt="meme">
+            <div class="slider flex">
+                <div class="img-wrapper flex flex-center">
+                    <img src="assets/img/mem1.webp" class="slider-item mem1" alt="meme">
+                </div>
+                <div class="img-wrapper flex flex-center">
+                    <img src="assets/img/mem2.webp" class="slider-item mem2" alt="meme">
+                </div>
+                <div class="img-wrapper flex flex-center">
+                    <img src="assets/img/mem3.webp" class="slider-item mem3" alt="meme">
+                </div>
+                <div class="img-wrapper flex flex-center">
+                    <img src="assets/img/mem4.webp" class="slider-item mem4" alt="meme">
+                </div>
             </div>
         </div>
-        <div class="description-block">
-            <div class="text-box">
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
+        <div class="description-block flex">
+            <div class="text-box flex">
+                <p class="mem-text mem1">When debugging JavaScript</p>
+                <p class="mem-text mem2">1 + 1 Boardroom meeting</p>
+                <p class="mem-text mem3">Comparison operator</p>
+                <p class="mem-text mem4">Float numbers</p>
             </div>
-            <div class="controls-box">
-                <div class="click-scope">
+            <div class="controls-box flex flex-center">
+                <div class="click-scope flex flex-center">
                     <div class="controls-icon">&nbsp;</div>
                 </div>
-                <div class="click-scope">
+                <div class="click-scope flex flex-center">
                     <div class="controls-icon">&nbsp;</div>
                 </div>
-                <div class="click-scope">
+                <div class="click-scope flex flex-center">
                     <div class="controls-icon">&nbsp;</div>
                 </div>
-                <div class="click-scope">
+                <div class="click-scope flex flex-center">
                     <div class="controls-icon">&nbsp;</div>
                 </div>
             </div>
