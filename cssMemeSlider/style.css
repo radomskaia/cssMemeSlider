@@ -1,3 +1,4 @@
+/* Base */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,9 +7,13 @@
 
 html {
     font-size: 62.5%; /* 10 px */
-    background-color: #000000;
 }
 
+body {
+    background-color: #1f2023;
+}
+
+/* utils */
 .flex {
     display: flex;
 }
@@ -24,56 +29,50 @@ html {
 
 .container {
     max-width: 120rem;
-    margin: 10rem auto;
+    margin: 0 auto;
     padding: 2rem;
-    background-color: rgba(40, 180, 133, 0.4);
 }
 
-.transition {
-    transition: all 0.5s;
+/* main */
+#mem1,
+#mem2,
+#mem3,
+#mem4 {
+    display: none;
 }
 
 .slider-block {
     max-width: 120rem;
-    gap: 2rem;
+    gap: 4rem;
 }
 
-.slider-box {
-    max-width: 50rem;
-    overflow: hidden;
+
+.description-block {
+    max-width: 70rem;
+    justify-content: space-between;
 }
 
+/* slider */
 .slider {
-    align-items: center;
+    max-width: 70rem;
+    overflow: hidden;
+    align-items: flex-end;
 }
 
 .img-wrapper {
     max-width: 100%;
     flex-shrink: 0;
-    border-radius: 3rem;
+    border-radius: 0.9rem;
     overflow: hidden;
 }
 
 .slider-item {
     width: 100%;
     object-fit: cover;
-    /*opacity: 0;*/
 }
 
-.description-block {
-    max-width: 50rem;
-    justify-content: space-between;
-}
-
-.click-scope {
-    width: 3rem;
-    height: 3rem;
-    background-color: yellow;
-    border: blue solid 1px;
-}
-
+/* text */
 .text-box {
-    gap: 1rem;
     width: 60%;
     overflow: hidden;
 }
@@ -82,43 +81,82 @@ html {
     width: 100%;
     flex-shrink: 0;
     font-size: 2.4rem;
-    /*opacity: 0;*/
+    color: #b3b3b3;
+}
+
+/* slider / text animation*/
+.mem {
+    transition: all 0.3s;
+}
+
+#mem1:target ~ .slider-block .mem {
+    transform: translateX(0);
+}
+
+
+#mem2:target ~ .slider-block .mem {
+    transform: translateX(-100%);
+}
+
+#mem3:target ~ .slider-block .mem {
+    transform: translateX(-200%);
+}
+
+#mem4:target ~ .slider-block .mem {
+    transform: translateX(-300%);
+}
+
+/* controllers */
+.click-scope {
+    text-decoration: none;
+    width: 3rem;
+    height: 5rem;
 }
 
 .controls-icon {
-    width: 1rem;
-    height: 1rem;
-    background-color: #000000;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #67a56f;
     border-radius: 50%;
 }
 
 .mem1,
-.mem2,
-.mem3,
-.mem4 {
-    opacity: 0;
-    order: 1;
-}
-
-/*#mem1 {*/
-/*    width: 10rem;*/
-/*    height: 10rem;*/
-/*    background-color: #000000;*/
-/*}*/
+#mem1:target ~ .slider-block .mem1,
 #mem2:target ~ .slider-block .mem2,
-#mem1:target ~ .slider-block .mem1 {
-    order: -1;
-    opacity: 1;
+#mem3:target ~ .slider-block .mem3,
+#mem4:target ~ .slider-block .mem4 {
+    background-color: #1f2023;
+    border: 0.2rem solid #67a56f;
 }
 
-/*.click-scope:hover .controls-icon  {*/
-/*  background-color: red;*/
-/*}*/
+#mem2:target ~ .slider-block .mem1,
+#mem3:target ~ .slider-block .mem1,
+#mem4:target ~ .slider-block .mem1 {
+    background-color: #67a56f;
+    border: 0.2rem solid #67a56f;
+}
 
-/*.mem-text:hover + .controls-box .click-scope{*/
-/*  background-color: red;*/
-/*}*/
+#mem2:target ~ .slider-block .click-scope:hover .mem1,
+#mem3:target ~ .slider-block .click-scope:hover .mem1,
+#mem4:target ~ .slider-block .click-scope:hover .mem1,
+.click-scope:hover .controls-icon {
+    background-color: #b3b3b3;
+    border: 0.2rem solid #b3b3b3;
+}
 
-/*.text-box:hover + .controls-box .click-scope {*/
-/*  background-color: red;*/
-/*}*/
+#mem2:target ~ .slider-block .click-scope:active .mem1,
+#mem3:target ~ .slider-block .click-scope:active .mem1,
+#mem4:target ~ .slider-block .click-scope:active .mem1,
+.click-scope:active .controls-icon {
+    background-color: #1f2023;
+    border: 0.2rem solid #b3b3b3;
+}
+
+.click-scope:hover .mem1,
+#mem1:target ~ .slider-block .click-scope:hover .mem1,
+#mem2:target ~ .slider-block .click-scope:hover .mem2,
+#mem3:target ~ .slider-block .click-scope:hover .mem3,
+#mem4:target ~ .slider-block .click-scope:hover .mem4 {
+    background-color: #1f2023;
+    border: 0.2rem solid #b3b3b3;
+}
