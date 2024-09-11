@@ -30,7 +30,7 @@ body {
 .container {
     max-width: 120rem;
     margin: 0 auto;
-    padding: 2rem;
+    /*padding: 2rem;*/
 }
 
 /* main */
@@ -42,8 +42,9 @@ body {
 }
 
 .slider-block {
-    max-width: 120rem;
+    max-width: clamp(90vw, 100%, 120rem);
     gap: 4rem;
+    padding: 2rem;
 }
 
 
@@ -163,8 +164,11 @@ body {
 
 
 @media only screen and (width < 37.5em /*600px*/) {
+    html {
+        font-size: 56.25%; /* 9px */
+    }
+
     .slider-block {
-    max-width: 120rem;
     gap: 2rem;
 }
 
