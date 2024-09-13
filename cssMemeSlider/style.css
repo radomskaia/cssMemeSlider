@@ -149,7 +149,7 @@ body {
 #mem3:target ~ .slider-block .click-scope:active .mem1,
 #mem4:target ~ .slider-block .click-scope:active .mem1,
 .click-scope:active .controls-icon {
-    background-color: #1f2023;
+    background-color: #67a56f;
     border: 0.2rem solid #b3b3b3;
 }
 
